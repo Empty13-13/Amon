@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('_head.html',{
+"title":"Главная"
+})
+<body>
+<div class="wrapper">
+  @@include('_header.html',{})
+  <main class="page">
+
+    <div id="main" class="main">
+      <div class="main__wrapper">
+        <div class="main__content _container">
+          <div class="main__body">
+            <span class="main__welcome">Добро пожаловать в</span>
+            <h1 class="main__title">ОМАН</h1>
+            <div class="main__btn-group btn-group-main">
+              <a href="" class="btn-group-main__btn btn">Забронировать тур</a>
+              <a href="" class="btn-group-main__play">
+                <img src="img/main/play.svg" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main__back _ibg">
+        <img src="img/main/back.jpg" alt="">
+      </div>
+    </div>
+    @@include('_excursions.html',{})
+
+  </main>
+  @@include('_footer.html',{})
+</div>
+@@include('_popup.html',{})
+@@include('_js.html',{})
+</body>
+</html>
