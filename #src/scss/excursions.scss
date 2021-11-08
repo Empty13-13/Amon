@@ -1,21 +1,8 @@
 .excursions {
-  padding-top: 81px;
+  padding-top: 20px;
   z-index: 98;
   position: relative;
   
-  
-  @media (max-width: $md1+px) {
-    padding-top: 75px;
-  }
-  @media (max-width: $md2+px) {
-    padding-top: 65px;
-  }
-  @media (max-width: $md3+px) {
-    padding-top: 55px;
-  }
-  @media (max-width: $md4+px) {
-    padding-top: 45px;
-  }
   
   &__content {
   }
@@ -24,7 +11,7 @@
     font-style: normal;
     font-weight: 800;
     font-size: 80px;
-    line-height: 1.95;
+    line-height: 1.1;
     text-transform: uppercase;
     color: #FFFFFF;
     position: relative;
@@ -67,10 +54,13 @@
   &__body {
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: stretch;
     flex-wrap: wrap;
     margin-bottom: 37px;
     
+    @media (max-width:650px){
+      align-items: center;
+    }
     
     @media (max-width:650px){
       flex-direction: column;
@@ -101,8 +91,9 @@
     position: relative;
     padding: 25px 35px 20px 35px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
+    height: 100%;
     
     @media (max-width:$md1+px){
       padding: 23px 32px 18px 32px;

@@ -276,9 +276,20 @@ body.ie {
   height: 156px !important;
 }
 
+.slider-popup__slide.swiper-slide-active {
+  @media (max-width:$md4+px){
+    height: 187px !important;
+  }
+}
+.slider-popup__slide.swiper-slide-prev, .slider-popup__slide.swiper-slide-next {
+  @media (max-width:$md4+px){
+    height: 187px !important;
+  }
+}
 .slider-popup__slide2.swiper-slide-active {
   height: 187px !important;
 }
+
 
 .swiper-pagination-bullets {
   display: flex;

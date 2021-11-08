@@ -1,6 +1,8 @@
 // region Tours slider
 let slides = document.querySelectorAll('.slide-tours');
 let texts = document.querySelectorAll('.description-tours__text');
+let btns = document.querySelectorAll('.description-tours__more-btn');
+
 
 
 if (!!slides && !!texts && texts.length === slides.length) {
@@ -30,9 +32,50 @@ if (!!slides && !!texts && texts.length === slides.length) {
     }
     slides[previusIndex].classList.remove('_active')
     texts[previusIndex].classList.remove('_active')
+    btns[previusIndex].classList.remove('_active')
     slides[activeIndex].classList.add('_active')
     texts[activeIndex].classList.add('_active')
+    btns[activeIndex].classList.add('_active')
   }
 }
+
+// endregion
+
+// region addStar
+let stars = document.querySelectorAll('.slide-tours__stars');
+stars.forEach(item => {
+  let countStar = item.dataset.star
+  let string = '<img src="img/icons/star.png" alt="">'
+  let result = []
+  for (let i = 0; i < countStar; i++) {
+    result.push(string)
+  }
+  // console.log(result)
+  result = result.join('')
+  item.innerHTML = result
+})
+// endregion
+
+// region block-excursions__btn
+let btnsExcursions = document.querySelectorAll('.block-excursions__btn');
+let btnsMore = document.querySelectorAll('.more-popup__btn2')
+btnsExcursions.forEach(item => {
+  item.addEventListener("click",function(e) {
+    let title = item.parentNode.querySelector('.block-excursions__title').textContent
+    let nameTours = document.querySelectorAll('#nameTour');
+    nameTours.forEach(tour => {
+      tour.value = title.trim();
+    })
+  });
+})
+btnsMore.forEach(item => {
+  item.addEventListener("click",function(e) {
+    let title = item.parentNode.parentNode.querySelector('.more-popup__name').textContent
+    let nameTours = document.querySelectorAll('#nameTour');
+    nameTours.forEach(tour => {
+      tour.value = title.trim();
+    })
+  });
+})
 
 // endregion

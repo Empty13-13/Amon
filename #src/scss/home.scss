@@ -83,21 +83,6 @@
       margin-bottom: 54px;
     }
     
-    &:after {
-      content: '';
-      background: url('../img/main/line.svg') 0 0 no-repeat;
-      position: absolute;
-      width: 1748px;
-      height: 918px;
-      left: -53%;
-      top: 100%;
-      z-index: -1;
-      
-      @media (max-width:$md2+px){
-        left: -59%;
-      }
-    }
-    
   }
   
   &__btn-group {

@@ -64,7 +64,10 @@ function sliders_bild_callback(params) {
 }
 
 let feedbackSlider = document.querySelector('.feedback__body')
-let sliderPopup1 = document.querySelector('.slider-popup')
+let sliderPopup = document.querySelectorAll('.slider-popup')
+let thumbsSliders = document.querySelectorAll(".thumbsSlider")
+let swipersThumbs = []
+let swipers = []
 
 if (!!feedbackSlider) {
   feedbackSlider = new Swiper('.feedback__body', {
@@ -92,10 +95,10 @@ if (!!feedbackSlider) {
     //	clickable: true,
     //},
     // Arrows
-    navigation: {
-      nextEl: '.about__more .more__item_next',
-      prevEl: '.about__more .more__item_prev',
-    },
+    // navigation: {
+    //   nextEl: '.about__more .more__item_next',
+    //   prevEl: '.about__more .more__item_prev',
+    // },
     breakpoints: {
       320: {
         slidesPerView: 1,
@@ -126,80 +129,82 @@ if (!!feedbackSlider) {
     //},
   });
 }
-if (!!sliderPopup1) {
+if (!!sliderPopup) {
 
-  let swiper2 = new Swiper(".thumbsSlider", {
-    slidesPerView: 3,
-    watchSlidesProgress: true,
-    centeredSlides: true,
-    loop: true,
-    spaceBetween: 30,
-    breakpoints: {
-      320: {
-        // autoHeight: true,
-      },
-      550: {
-        spaceBetween: 10,
-      },
-      1080: {
-        spaceBetween: 20,
-      },
-      1268: {
+  let dotts = document.querySelectorAll('.more-popup__dotts')
+
+  sliderPopup.forEach((item, index) => {
+    swipersThumbs.push(new Swiper(thumbsSliders[index], {
+        slidesPerView: 3,
+        watchSlidesProgress: true,
+        centeredSlides: true,
         spaceBetween: 30,
-      },
-    },
-  });
-  swiper2.height = 186;
-  new Swiper('.slider-popup', {
+        breakpoints: {
+          320: {
+            // autoHeight: true,
+          },
+          550: {
+            spaceBetween: 10,
+          },
+          1080: {
+            spaceBetween: 20,
+          },
+          1268: {
+            spaceBetween: 30,
+          },
+        },
+      })
+    )
+    swipers.push(new Swiper(item, {
 
-    // effect: 'fade',
-    // autoplay: {
-    // 	delay: 3000,
-    // 	disableOnInteraction: false,
-    // },
-    // freeMode: true,
-    watchSlidesProgress: true,
-    observer: true,
-    observeParents: true,
-    slidesPerView: 1,
-    spaceBetween: 10,
-    loop: true,
-    autoHeight: true,
-    speed: 800,
-    // width: 567,
-    // height: 433,
-    //touchRatio: 0,
-    //simulateTouch: false,
-    // loop: true,
-    //preloadImages: false,
-    lazy: true,
-    //Dotts
-    pagination: {
-      el: '.more-popup__dotts',
-      clickable: true,
-    },
+      // effect: 'fade',
+      // autoplay: {
+      // 	delay: 3000,
+      // 	disableOnInteraction: false,
+      // },
+      // freeMode: true,
+      watchSlidesProgress: true,
+      observer: true,
+      observeParents: true,
+      slidesPerView: 1,
+      spaceBetween: 10,
+      autoHeight: true,
+      speed: 800,
+      initialSlide: 2,
+      // width: 567,
+      // height: 433,
+      //touchRatio: 0,
+      //simulateTouch: false,
+      // loop: true,
+      //preloadImages: false,
+      lazy: true,
+      //Dotts
+      pagination: {
+        el: dotts[index],
+        clickable: true,
+      },
 
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+        },
+        479.98: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
       },
-      479.98: {
-        slidesPerView: 1,
-        spaceBetween: 10,
+      on: {
+        lazyImageReady: function () {
+          ibg();
+        },
       },
-    },
-    on: {
-      lazyImageReady: function () {
-        ibg();
+      // And if we need scrollbar
+      //scrollbar: {
+      //	el: '.swiper-scrollbar',
+      //},
+      thumbs: {
+        swiper: swipersThumbs[index],
       },
-    },
-    // And if we need scrollbar
-    //scrollbar: {
-    //	el: '.swiper-scrollbar',
-    //},
-    thumbs: {
-      swiper: swiper2,
-    },
-  });
-
+    }))
+  })
 }

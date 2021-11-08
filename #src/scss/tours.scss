@@ -54,7 +54,6 @@
     visibility: visible;
   }
   
-  
   &__body {
     position: relative;
     z-index: 2;
@@ -127,6 +126,7 @@
     @media (max-width: $md3+px) {
       font-size: 40px;
       margin-bottom: 40px;
+      flex-direction: column;
     }
     @media (max-width: $md4+px) {
       font-size: 30px;
@@ -138,13 +138,35 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 30px;
     
-    span {
-      background: url('../img/icons/star.svg') 0 0 no-repeat;
+    @media (max-width: $md3+px) {
+      margin: 0;
+      margin-top: -20px;
+    }
+    @media (max-width: $md4+px) {
+      margin-top: -15px;
+    }
+    
+    img {
       width: 22px;
       height: 22px;
       display: inline-flex;
+      margin-right: 5px;
+      
+      &:last-child {
+        margin-right: 0;
+      }
     }
+    
+    &._popup {
+      margin-top: 15px !important;
+      margin-left: 0px;
+      display: flex;
+      justify-content:flex-start;
+      align-items: center;
+    }
+    
   }
   
   &__back {
@@ -256,11 +278,10 @@
   }
   
   &__name {
-    font-family: Fira Sans;
     font-style: normal;
     font-weight: 800;
     font-size: 40px;
-    line-height: 2.15;
+    line-height: 1.15;
     text-align: right;
     text-transform: uppercase;
     color: #FFFFFF;
@@ -297,6 +318,8 @@
     cursor: pointer;
     margin-right: 20px;
     margin-bottom: 38px;
+    
+    
     
     @media (max-width: $md1+px) {
       margin-bottom: 36px;
@@ -352,11 +375,13 @@
       font-size: 14px;
       margin-bottom: 40px;
       text-align: center;
+      max-width: 600px;
     }
     @media (max-width: $md3+px) {
       font-size: 15px;
       margin-bottom: 30px;
       max-width: 500px;
+      padding: 0 5px;
     }
     @media (max-width: $md4+px) {
       font-size: 14px;
@@ -384,6 +409,10 @@
     background: $blueColor;
     border-radius: 11px;
     transition: all 0.3s ease 0s;
+    display: none;
+    &._active{
+      display: block;
+    }
     
     @media (any-hover: hover) {
       &:hover {
