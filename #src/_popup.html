@@ -33,6 +33,11 @@
               <div class="slider-popup__slide2"><img src="img/popupMore/3.jpg" alt="" class=""></div>
             </div>
             <div class="more-popup__dotts"></div>
+            <div class="more-popup__btn-group _back">
+              <a href="#pwp" class="more-popup__btn btn _popup-link">Оплатить</a>
+              <a href="#pwp2" class="more-popup__btn2 btn _popup-link">Забронировать</a>
+            </div>
+
           </div>
         </div>
       </div>
@@ -74,6 +79,11 @@
               <div class="slider-popup__slide2"><img src="img/popupMore/2.png" alt="" class=""></div>
             </div>
             <div class="more-popup__dotts"></div>
+            <div class="more-popup__btn-group _back">
+              <a href="#pwp" class="more-popup__btn btn _popup-link">Оплатить</a>
+              <a href="#pwp2" class="more-popup__btn2 btn _popup-link">Забронировать</a>
+            </div>
+
           </div>
         </div>
       </div>
@@ -115,6 +125,11 @@
               <div class="slider-popup__slide2"><img src="img/popupMore/4.jpg" alt="" class=""></div>
             </div>
             <div class="more-popup__dotts"></div>
+            <div class="more-popup__btn-group _back">
+              <a href="#pwp" class="more-popup__btn btn _popup-link">Оплатить</a>
+              <a href="#pwp2" class="more-popup__btn2 btn _popup-link">Забронировать</a>
+            </div>
+
           </div>
         </div>
       </div>
@@ -160,6 +175,11 @@
               <div class="slider-popup__slide2"><img src="img/popupMore/1.jpg" alt="" class=""></div>
             </div>
             <div class="more-popup__dotts"></div>
+            <div class="more-popup__btn-group _back">
+              <a href="#pwp" class="more-popup__btn btn _popup-link">Оплатить</a>
+              <a href="#pwp2" class="more-popup__btn2 btn _popup-link">Забронировать</a>
+            </div>
+
           </div>
         </div>
       </div>
@@ -204,6 +224,11 @@
               <div class="slider-popup__slide2"><img src="img/popupMore/4.jpg" alt="" class=""></div>
             </div>
             <div class="more-popup__dotts"></div>
+            <div class="more-popup__btn-group _back">
+              <a href="#pwp" class="more-popup__btn btn _popup-link">Оплатить</a>
+              <a href="#pwp2" class="more-popup__btn2 btn _popup-link">Забронировать</a>
+            </div>
+
           </div>
         </div>
       </div>
@@ -248,6 +273,11 @@
               <div class="slider-popup__slide2"><img src="img/popupMore/4.jpg" alt="" class=""></div>
             </div>
             <div class="more-popup__dotts"></div>
+            <div class="more-popup__btn-group _back">
+              <a href="#pwp" class="more-popup__btn btn _popup-link">Оплатить</a>
+              <a href="#pwp2" class="more-popup__btn2 btn _popup-link">Забронировать</a>
+            </div>
+
           </div>
         </div>
       </div>
@@ -278,13 +308,51 @@
     <div class="popup__body _pwp">
       <div class="popup__close"></div>
       <div class="popup__pwp pwp-popup">
-        <form class="pwp-popup__body">
+        <form name="pwp" class="pwp-popup__body">
+          <!-- Hidden Required Fields -->
+          <input type="hidden" name="project_name" value="OldOman">
+          <input type="hidden" name="admin_email" value="info@oldoman.com">
+          <input type="hidden" name="form_subject" value="Новая заявка">
+          <input type="hidden" name="Общая сумма" value="0" id="allMoney">
+          <!-- END Hidden Required Fields -->
           <p class="pwp-popup__name">Забронировать тур</p>
           <input type="hidden" name="nameTour" id="nameTour">
-          <input placeholder="Ваше имя" type="text" name="name2" id="name2">
-          <input placeholder="Номер телефона" type="tel2" name="tel" id="tel2">
-          <input type="date" name="date2" id="date2">
-          <button type="button" class="pwp-popup__btn btn">Забронировать</button>
+          <input placeholder="Количество человек" type="text" name="Количество человек" id="people" required>
+          <input placeholder="Ваше имя" type="text" name="name" id="name2">
+          <input placeholder="Номер телефона" type="tel" name="tel" id="tel2">
+          <input type="date" name="date" id="date2">
+          <button type="submit" class="pwp-popup__btn btn">Забронировать</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="popup popup_pwp3">
+  <div class="popup__content">
+    <div class="popup__body _pwp">
+      <div class="popup__close"></div>
+      <div class="popup__pwp pwp-popup">
+        <form name="pwp" class="pwp-popup__body">
+          <!-- Hidden Required Fields -->
+          <input type="hidden" name="project_name" value="OldOman">
+          <input type="hidden" name="admin_email" value="info@oldoman.com">
+          <input type="hidden" name="form_subject" value="Новая заявка">
+          <input type="hidden" name="Общая сумма" value="0" id="allMoney">
+          <!-- END Hidden Required Fields -->
+          <p class="pwp-popup__name">Забронировать тур</p>
+          <input placeholder="Количество человек" type="text" name="Количество человек" id="people" required>
+          <div class="selectP">
+            <select type="text" name="Название тура" id="tourPWP3" required>
+              <option id="tourPWP3option" value="Манящая пустыня">Манящая пустыня</option>
+              <option id="tourPWP3option" value="Наследие культуры">Наследие культуры</option>
+              <option id="tourPWP3option" value="Манящая пустыня">Манящая пустыня</option>
+              <option id="tourPWP3option" value="Наследие культуры">Наследие культуры</option>
+            </select>
+          </div>
+          <input placeholder="Ваше имя" type="text" name="name" id="name2">
+          <input placeholder="Номер телефона" type="tel" name="tel" id="tel3">
+          <input type="date" name="date" id="date2">
+          <button type="submit" class="pwp-popup__btn btn">Забронировать</button>
         </form>
       </div>
     </div>
@@ -298,11 +366,18 @@
       <div class="popup__pwp feedback-popup">
         <div class="feedback-popup__body">
           <div class="feedback-popup__title">Обратная связь</div>
-          <div class="feedback-popup__description">Наш специалист проведет подробную консультацию, расскажет про туры, расчитает точную стоимсость и ответит на все ваши вопросы.</div>
-          <form action="" class="feedback-popup__form">
-            <input placeholder="Ваше имя" type="text" class="feedback-popup__input">
-            <input placeholder="Номер телефона" type="text" class="feedback-popup__input">
-            <button type="button" class="feedback-popup__btn btn">Отправить</button>
+          <div class="feedback-popup__description">Наш специалист проведет подробную консультацию, расскажет про туры,
+                                                   расчитает точную стоимсость и ответит на все ваши вопросы.
+          </div>
+          <form class="feedback-popup__form">
+            <!-- Hidden Required Fields -->
+            <input type="hidden" name="project_name" value="OldOman">
+            <input type="hidden" name="admin_email" value="info@oldoman.com">
+            <input type="hidden" name="form_subject" value="Новая заявка">
+            <!-- END Hidden Required Fields -->
+            <input placeholder="Ваше имя" name="name" type="text" class="feedback-popup__input">
+            <input placeholder="Номер телефона" id="tel4" name="tell" type="text" class="feedback-popup__input">
+            <button type="submit" class="feedback-popup__btn btn">Отправить</button>
           </form>
         </div>
       </div>

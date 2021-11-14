@@ -396,6 +396,7 @@ for (let index = 0; index < popup_link.length; index++) {
 		if (unlock) {
 			let item = el.getAttribute('href').replace('#', '');
 			let video = el.getAttribute('data-video');
+			console.log('lol')
 			popup_open(item, video);
 		}
 		e.preventDefault();
@@ -404,7 +405,7 @@ for (let index = 0; index < popup_link.length; index++) {
 for (let index = 0; index < popups.length; index++) {
 	const popup = popups[index];
 	popup.addEventListener("click", function (e) {
-		if (!e.target.closest('.popup__body')) {
+		if (!e.target.closest('.popup__body') || e.target.classList.contains("pwp-popup__btn")) {
 			popup_close(e.target.closest('.popup'));
 		}
 	});
@@ -415,7 +416,9 @@ function popup_open(item, video = '') {
 		popup_close('', false);
 	}
 	let curent_popup = document.querySelector('.popup_' + item);
+	console.log(curent_popup)
 	if (curent_popup && unlock) {
+		console.log('lol')
 		if (video != '' && video != null) {
 			let popup_video = document.querySelector('.popup_video');
 			popup_video.querySelector('.popup__video').innerHTML = '<iframe src="https://www.youtube.com/embed/' + video + '?autoplay=1"  allow="autoplay; encrypted-media" allowfullscreen></iframe>';

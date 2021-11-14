@@ -233,7 +233,7 @@ body.ie {
     box-sizing: content-box;
     display: flex;
     position: relative;
-    align-items: center;
+    align-items: stretch;
   }
   
   &.swiper-container-vertical {

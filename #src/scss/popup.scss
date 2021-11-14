@@ -152,12 +152,19 @@
       top: 50%;
       transform: translateY(-50%);
       background: white;
+      @media (max-width:$md2+px){
+        display: none;
+      }
     }
     
   }
   
   &__texts {
     @media (max-width: $md2+px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
       margin-bottom: 40px;
     }
   }
@@ -216,6 +223,7 @@
       }
     }
     
+
     @media (max-width: $md4+px) {
       font-size: 14px;
     }
@@ -224,6 +232,20 @@
   &__btn-group {
     display: inline-flex;
     flex-direction: column;
+    
+    @media (max-width:$md2+px){
+      display: none;
+    }
+    
+    &._back{
+      display: none;
+      
+      @media (max-width:$md2+px){
+        margin-top: 30px;
+        display: flex;
+      }
+    }
+    
   }
   
   &__btn {
@@ -369,8 +391,9 @@
     align-items: center;
     
     
-    input {
+    input,select {
       margin-bottom: 30px;
+      font-family: Fira Sans;
       font-style: normal;
       font-weight: normal;
       font-size: 15px;
@@ -382,6 +405,16 @@
       justify-content: center;
       align-items: center;
       padding: 0 20px;
+    }
+    option {
+      font-family: Fira Sans;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 18px;
+    }
+    select:focus{
+      border-radius: 22px 22px 0 0;
     }
     
     button {
@@ -403,7 +436,6 @@
   &__btn {
   }
 }
-
 
 //====================================================================================================
 
@@ -436,17 +468,37 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
+    @media (max-width: $md3+px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      
+    }
   }
   
   &__input {
     background: #FFFFFF;
     border-radius: 22px;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     width: 252px;
     height: 49px;
     padding: 0 20px;
+    margin-right: 10px;
+    
+    @media (max-width: $md1+px) {
+      width: 232px;
+    }
+    @media (max-width: $md2+px) {
+      width: 212px;
+    }
+    @media (max-width: $md3+px) {
+      width: 252px;
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
   }
   
   &__btn {

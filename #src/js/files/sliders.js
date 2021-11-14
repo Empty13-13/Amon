@@ -1,6 +1,17 @@
+let excursions = document.querySelector('.excursions__body');
+if(!!excursions) {
+  if (document.documentElement.clientWidth < 479.98) {
+    excursions.classList.add('_swiper')
+  }
+}
 //BildSlider
 let sliders = document.querySelectorAll('._swiper');
 if (sliders) {
+  startSwiper()
+  sliders_bild_callback();
+}
+
+function startSwiper() {
   for (let index = 0; index < sliders.length; index++) {
     let slider = sliders[index];
     if (!slider.classList.contains('swiper-bild')) {
@@ -29,7 +40,6 @@ if (sliders) {
       //slider.data('lightGallery').destroy(true);
     }
   }
-  sliders_bild_callback();
 }
 
 function sliders_bild_callback(params) {
@@ -80,13 +90,13 @@ if (!!feedbackSlider) {
 
     observer: true,
     observeParents: true,
-    slidesPerView: 3,
-    spaceBetween: 30,
-    autoHeight: true,
+    slidesPerView: 2,
+    spaceBetween: 45,
+    // autoHeight: true,
+    loop: true,
     speed: 800,
     //touchRatio: 0,
     //simulateTouch: false,
-    loop: true,
     //preloadImages: false,
     //lazy: true,
     // Dotts
@@ -102,20 +112,20 @@ if (!!feedbackSlider) {
     breakpoints: {
       320: {
         slidesPerView: 1,
-        spaceBetween: 0,
+        spaceBetween: 10,
         autoHeight: true,
       },
-      550: {
+      750: {
         slidesPerView: 2,
-        spaceBetween: 10,
-      },
-      1080: {
-        slidesPerView: 3,
         spaceBetween: 20,
       },
-      1268: {
-        slidesPerView: 3,
+      1080: {
+        slidesPerView: 2,
         spaceBetween: 30,
+      },
+      1268: {
+        slidesPerView: 2,
+        spaceBetween: 45,
       },
     },
     on: {
@@ -123,6 +133,7 @@ if (!!feedbackSlider) {
         ibg();
       },
     }
+
     // And if we need scrollbar
     //scrollbar: {
     //	el: '.swiper-scrollbar',
@@ -130,9 +141,7 @@ if (!!feedbackSlider) {
   });
 }
 if (!!sliderPopup) {
-
   let dotts = document.querySelectorAll('.more-popup__dotts')
-
   sliderPopup.forEach((item, index) => {
     swipersThumbs.push(new Swiper(thumbsSliders[index], {
         slidesPerView: 3,
@@ -153,8 +162,7 @@ if (!!sliderPopup) {
             spaceBetween: 30,
           },
         },
-      })
-    )
+      }))
     swipers.push(new Swiper(item, {
 
       // effect: 'fade',
@@ -208,3 +216,94 @@ if (!!sliderPopup) {
     }))
   })
 }
+
+if(!!excursions) {
+  if (document.documentElement.clientWidth < 479.98) {
+    new Swiper('.excursions__body', {
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      observer: true,
+      observeParents: true,
+      slidesPerView: 1,
+      spaceBetween: 10,
+      autoHeight: true,
+      speed: 800,
+      on: {
+        lazyImageReady: function () {
+          ibg();
+        },
+      }
+      // And if we need scrollbar
+      //scrollbar: {
+      //	el: '.swiper-scrollbar',
+      //},
+    });
+  }
+}
+
+
+let slider1 = document.querySelector('.sliderGroup__slider')
+if(!!slider1) {
+  feedbackSlider = new Swiper(slider1, {
+
+    // effect: 'fade',
+    // autoplay: {
+    //   delay: 3000,
+    //   disableOnInteraction: false,
+    // },
+
+    observer: true,
+    observeParents: true,
+    slidesPerView: 3,
+    spaceBetween: 45,
+    // autoHeight: true,
+    loop: true,
+    speed: 800,
+    //touchRatio: 0,
+    //simulateTouch: false,
+    //preloadImages: false,
+    //lazy: true,
+    // Dotts
+    //pagination: {
+    //	el: '.slider-quality__pagging',
+    //	clickable: true,
+    //},
+    // Arrows
+    // navigation: {
+    //   nextEl: '.about__more .more__item_next',
+    //   prevEl: '.about__more .more__item_prev',
+    // },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        autoHeight: true,
+      },
+      750: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1080: {
+        slidesPerView: 3,
+        spaceBetween: 25,
+      },
+      1268: {
+        slidesPerView: 3,
+        spaceBetween: 35,
+      },
+    },
+    on: {
+      lazyImageReady: function () {
+        ibg();
+      },
+    }
+
+    // And if we need scrollbar
+    //scrollbar: {
+    //	el: '.swiper-scrollbar',
+    //},
+  });
+}
+

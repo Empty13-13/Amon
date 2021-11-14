@@ -49,32 +49,20 @@
   }
   
   &__logo {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 1.22;
-    text-align: right;
-    letter-spacing: 7.33333px;
-    text-transform: uppercase;
-    color: #FFFFFF;
     margin-right: 20px;
     z-index: 20;
+    max-width: 144px;
+    margin-bottom: 5px;
     
-    
-    @media (max-width:$md2+px){
-      font-size: 17px;
-      letter-spacing: 6.33333px;
-    }
-    @media (max-width:820px){
-      text-align: center;
-    }
-    @media (max-width:$md3+px){
-      font-size: 18px;
-      white-space: nowrap;
-    }
-    @media (max-width:$md4+px){
-      font-size: 16px;
-      letter-spacing: 5.33333px;
+    img {
+      max-width: 144px;
+      
+      @media (max-width:$md2+px){
+        max-width: 110px;
+      }
+      @media (max-width:$md3+px){
+        max-width: 100px;
+      }
     }
   }
 }
@@ -187,6 +175,9 @@
       @media (max-width:$md3+px){
         margin-right: 14px;
       }
+      @media (max-width:$md4+px){
+        margin-right: 8px;
+      }
       
       path{
         transition: all 0.3s ease 0s;
@@ -212,14 +203,27 @@
       margin-right: 70px;
     }
     @media (max-width:$md4+px){
-      margin: 0;
-      margin-top: 30px;
+      margin-right: 80px;
     }
   }
   
   &__link {
+    svg {
+      max-width: 20px;
+      max-height: 20px;
+    }
     
-  
+    @media (max-width:$md4+px){
+      svg {
+        max-width: 19px;
+      }
+    }
+    
+    @media (max-width:330px){
+      svg {
+        max-width: 17px;
+      }
+    }
   }
 }
 
@@ -236,7 +240,7 @@
     cursor: pointer;
     z-index: 5;
     @media (max-width:$md4+px){
-      top: 23px;
+      top: 25px;
     }
     span {
       transition: all 0.3s ease 0s;
