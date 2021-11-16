@@ -1,11 +1,11 @@
 .main {
   width: 100vw;
-  height: 80vh;
+  height: 100vh;
   position: relative;
   padding-top: 120px;
   
   @media (max-width:$md3+px){
-    height: 70vh;
+    height: 80vh;
   }
   @media (max-width:$md4+px){
     height: 266px;

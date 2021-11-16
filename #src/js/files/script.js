@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!!stars) {
     stars.forEach(item => {
       let countStar = item.dataset.star
-      let string = '<img src="img/icons/star.png" alt="">'
+      let string = '<img src="http://oldoman.com/wp-content/themes/gernaldo/gernaldo/img/icons/star.png" alt="">'
       let result = []
       for (let i = 0; i < countStar; i++) {
         result.push(string)

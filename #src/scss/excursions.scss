@@ -78,6 +78,7 @@
   border-radius: 11px;
   overflow: hidden;
   position: relative;
+  margin-bottom: 20px;
   
   @media (max-width:$md2+px){
     flex: 0 0 38%;
@@ -85,6 +86,7 @@
   }
   @media (max-width:$md3+px){
     flex: 0 0 48%;
+    max-width: 300px;
   }
   @media (max-width:$md4+px){
     flex: 1 1 auto;
@@ -122,6 +124,7 @@
     text-transform: uppercase;
     color: #FFFFFF;
     margin-bottom: 155px;
+    text-align: center;
     
     @media (max-width: $md1+px) {
       font-size: 35px;
